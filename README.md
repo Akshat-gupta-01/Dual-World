@@ -103,12 +103,6 @@ To deploy:
 
 ---
 
-## 📸 Preview
-
-> A visually immersive UI that transforms reality with a single click.
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome!
