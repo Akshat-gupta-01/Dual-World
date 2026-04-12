@@ -4,12 +4,6 @@ An immersive and interactive web experience that lets users switch between two c
 
 ---
 
-## 🌐 Live Demo
-
-👉 https://Akshat-gupta-01.github.io/Dual-World/
-
----
-
 ## ✨ Features
 
 * 🌗 **Dual Mode Toggle**
