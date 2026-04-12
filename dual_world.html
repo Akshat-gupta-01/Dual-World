@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="normal">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DUAL WORLD — Two Worlds. One Click.</title>
+    <meta name="description" content="Experience Dual World, an immersive web experience that lets you toggle between a clean, bright Normal mode and a dark, eerie Upside Down mode." />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌓</text></svg>">
+</head>
+<body>
+
+<!-- PARTICLES CANVAS -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- GLITCH OVERLAY -->
+<div id="glitch-overlay"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">DUAL<span>.</span>WORLD</div>
+    <ul class="nav-links">
+      <li><a href="#concept">Concept</a></li>
+      <li><a href="#modes">Modes</a></li>
+      <li><a href="#tech">Tech</a></li>
+      <li><a href="#applications">Applications</a></li>
+    </ul>
+    <button id="world-toggle" onclick="toggleWorld()">⬡ Enter Upside Down</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <!-- <p class="hero-badge">// Code Warriors — Project Dual World</p> -->
+  <h1 class="hero-title glitch-target" data-text="DUAL WORLD">
+    <span class="accent-line">DUAL</span><br>WORLD
+  </h1>
+  <p class="hero-subtitle">Two Worlds. One Click.</p>
+  <div class="hero-cta">
+    <button id="hero-toggle" class="btn-primary" onclick="toggleWorld()">ENTER THE UPSIDE DOWN</button>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<div class="intro-band full reveal">
+  <p>One click transforms everything. Experience a web app that defies dimensions — switching seamlessly between a <strong>clean, bright interface</strong> and a <strong>dark, glitchy alternate reality</strong> with eerie red tones and immersive effects.</p>
+</div>
+
+<!-- DUAL CONCEPT -->
+<section id="concept">
+  <div class="section-header reveal">
+    <p class="section-label">// 01 — The Concept</p>
+    <h2 class="section-title">THE DUAL<br>EXPERIENCE</h2>
+  </div>
+  <div class="dual-grid reveal">
+    <div class="dual-card">
+      <p class="card-world">◎ Normal Mode</p>
+      <h3>Clean World</h3>
+      <ul>
+        <li>Clean, bright, and intuitive interface</li>
+        <li>Smooth animations and calming visuals</li>
+        <li>Crisp typography with generous whitespace</li>
+        <li>Natural, delightful micro-interactions</li>
+      </ul>
+    </div>
+    <div class="dual-card" style="background: var(--surface);">
+      <p class="card-world">◉ Upside Down Mode</p>
+      <h3>Dark Realm</h3>
+      <ul>
+        <li>Dark, glitchy, immersive experience</li>
+        <li>Red tones and eerie atmospheric effects</li>
+        <li>Distorted elements and corrupted visuals</li>
+        <li>Ambient soundscape of another dimension</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CORE ELEMENTS -->
+<section id="core">
+  <div class="section-header reveal">
+    <p class="section-label">// 02 — Core Elements</p>
+    <h2 class="section-title">BUILT ON<br>THREE PILLARS</h2>
+  </div>
+  <div class="core-grid">
+    <div class="core-card reveal">
+      <div class="core-icon">🎨</div>
+      <h4>Design</h4>
+      <p>Visual metamorphosis from pristine whites and soft blues to deep crimson and corrupted glitch aesthetics. Every pixel transforms with intent.</p>
+    </div>
+    <div class="core-card reveal" style="transition-delay:0.15s">
+      <div class="core-icon">⚡</div>
+      <h4>Animation</h4>
+      <p>Fluid transitions orchestrate the world switch — colors invert, particles scatter, and reality bends before your eyes in under a second.</p>
+    </div>
+    <div class="core-card reveal" style="transition-delay:0.3s">
+      <div class="core-icon">🔊</div>
+      <h4>Sound</h4>
+      <p>Atmospheric audio that shifts between worlds. Each dimension has its own immersive 3D soundscape that reinforces the emotional experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MODES -->
+<section id="modes">
+  <!-- Normal Mode -->
+  <div class="section-header reveal">
+    <p class="section-label">// 03 — Normal Mode</p>
+    <h2 class="section-title">THE CLEAN<br>WORLD</h2>
+  </div>
+  <div class="experience-wrap reveal">
+    <div class="experience-visual">
+      <div class="exp-screen normal-screen">
+        <div class="exp-bar accent"></div>
+        <div class="exp-bar"></div>
+        <div class="exp-bar short"></div>
+        <div class="exp-block"></div>
+        <div class="exp-bar short"></div>
+        <div class="exp-bar"></div>
+      </div>
+    </div>
+    <div class="experience-content">
+      <h3>Pristine & Focused</h3>
+      <div class="experience-items">
+        <div class="exp-item">
+          <h5>Clean & Bright Interface</h5>
+          <p>A pristine white canvas with soft shadows, crisp typography, and generous whitespace. Every element breathes, creating a calm and focused user experience.</p>
+        </div>
+        <div class="exp-item">
+          <h5>Intuitive Navigation</h5>
+          <p>Smooth micro-interactions guide users effortlessly through the interface. Hover states, subtle animations, and clear visual hierarchy make exploration feel natural and delightful.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upside Down Mode -->
+  <div class="section-header reveal" style="margin-top: 100px;">
+    <p class="section-label">// 04 — Upside Down Mode</p>
+    <h2 class="section-title">THE DARK<br>REALM</h2>
+  </div>
+  <div class="experience-wrap reveal" style="direction: rtl;">
+    <div class="experience-visual" style="direction:ltr; background: #050205;">
+      <div class="exp-screen dark-screen" style="background: transparent;">
+        <div class="exp-bar accent"></div>
+        <div class="exp-bar"></div>
+        <div class="exp-bar short"></div>
+        <div class="exp-block"></div>
+        <div class="exp-bar short"></div>
+        <div class="exp-bar"></div>
+      </div>
+    </div>
+    <div class="experience-content" style="direction:ltr;">
+      <h3>Corrupted & Immersive</h3>
+      <div class="experience-items">
+        <div class="exp-item">
+          <h5>Dark & Glitchy Interface</h5>
+          <p>When you enter the Upside Down, the entire UI transforms into a dark, corrupted version. Glitch effects distort elements, creating an unsettling yet captivating visual experience.</p>
+        </div>
+        <div class="exp-item">
+          <h5>Eerie Red Atmosphere</h5>
+          <p>Deep crimson tones wash over every element. Shadows deepen, particles float ominously, and the ambient soundscape shifts to create a truly immersive alternate dimension.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION JOURNEY -->
+<div id="transformation">
+  <div class="transform-inner">
+    <div class="section-header reveal">
+      <p class="section-label">// 05 — The Journey</p>
+      <h2 class="section-title">THE TRANSFORMATION</h2>
+    </div>
+    <div class="transform-flow reveal">
+      <div class="transform-step">
+        <div class="step-num">01</div>
+        <h4>Normal World</h4>
+        <p>Clean, bright interface — the calm before the storm.</p>
+      </div>
+      <div class="transform-arrow">→</div>
+      <div class="transform-step">
+        <div class="step-num">02</div>
+        <h4>The Click</h4>
+        <p>One click. Reality begins to fracture and bend.</p>
+      </div>
+      <div class="transform-arrow">→</div>
+      <div class="transform-step">
+        <div class="step-num">03</div>
+        <h4>Upside Down</h4>
+        <p>Dark, glitchy realm — a new dimension unfolds.</p>
+      </div>
+    </div>
+    <p class="transform-desc reveal">
+      Witness the seamless world switch in action. From the clean, bright interface of normal mode, through the mesmerizing transition animation, to the dark, glitchy Upside Down realm — colors invert, particles scatter, and reality bends before your eyes.
+    </p>
+  </div>
+</div>
+
+<!-- TECHNICAL MAGIC -->
+<section id="tech">
+  <div class="section-header reveal">
+    <p class="section-label">// 06 — Technical Magic</p>
+    <h2 class="section-title">THE<br>ARCHITECTURE</h2>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card reveal">
+      <div class="tech-num">01</div>
+      <h4>CSS Transitions</h4>
+      <p>Smooth morphing animations between worlds using CSS custom properties and carefully orchestrated keyframes. Zero JavaScript overhead for visual changes.</p>
+    </div>
+    <div class="tech-card reveal" style="transition-delay:0.15s">
+      <div class="tech-num">02</div>
+      <h4>WebGL Effects</h4>
+      <p>Real-time glitch shaders and distortions powered by WebGL. Fragment shaders manipulate pixel data on the GPU for zero-lag visual corruption effects.</p>
+    </div>
+    <div class="tech-card reveal" style="transition-delay:0.3s">
+      <div class="tech-num">03</div>
+      <h4>Spatial Audio</h4>
+      <p>Immersive 3D soundscapes per dimension using the Web Audio API. Each world has its own atmospheric audio profile that reacts to user interaction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN SYSTEMS -->
+<section id="design-systems">
+  <div class="section-header reveal">
+    <p class="section-label">// 07 — Design Systems</p>
+    <h2 class="section-title">TWO SYSTEMS,<br>ONE FOUNDATION</h2>
+  </div>
+  <p class="ds-desc reveal">The dual design system ensures visual coherence while delivering dramatically different emotional experiences. Each theme has its own color palette, typography rules, and animation behaviors.</p>
+  <div class="design-split">
+    <div class="ds-card reveal">
+      <p class="ds-label">Normal World Theme</p>
+      <h3>Light & Crisp</h3>
+      <div class="ds-swatches">
+        <div class="swatch" style="background:#f4f1ec;"></div>
+        <div class="swatch" style="background:#ffffff;"></div>
+        <div class="swatch" style="background:#1a6bff;"></div>
+        <div class="swatch" style="background:#1a1714;"></div>
+        <div class="swatch" style="background:#5a5550;"></div>
+      </div>
+      <p>Clean whites, soft blues, crisp typography. A system designed for clarity, focus, and delightful ease of use. Every spacing decision maximizes breathing room.</p>
+    </div>
+    <div class="ds-card reveal" style="background: var(--surface); transition-delay:0.2s">
+      <p class="ds-label">Upside Down Theme</p>
+      <h3>Dark & Distorted</h3>
+      <div class="ds-swatches">
+        <div class="swatch" style="background:#070407;"></div>
+        <div class="swatch" style="background:#110008;"></div>
+        <div class="swatch" style="background:#ff1a1a;"></div>
+        <div class="swatch" style="background:#f5e6e8;"></div>
+        <div class="swatch" style="background:#a07070;"></div>
+      </div>
+      <p>Deep reds, glitch distortions, warped fonts. A system engineered for maximum impact, creating an otherworldly experience that is as beautiful as it is unsettling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS -->
+<section id="why">
+  <div class="section-header reveal">
+    <p class="section-label">// 08 — Why It Works</p>
+    <h2 class="section-title">THE PSYCHOLOGY<br>BEHIND IT</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">🧠</div>
+      <h4>Emotional Engagement</h4>
+      <p>The dramatic shift triggers curiosity and wonder. Users don't just visit a website — they experience a moment of genuine surprise that creates lasting emotional memory.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.15s">
+      <div class="why-icon">⭐</div>
+      <h4>Memorable Interactions</h4>
+      <p>Users remember experiences that surprise them. The world switch creates a shareable, talkable moment that turns passive visitors into active advocates.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.3s">
+      <div class="why-icon">📖</div>
+      <h4>Storytelling Through UI</h4>
+      <p>The interface itself becomes the narrative. Form and function merge — the UI isn't just the container for the story, it is the story.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<div id="applications">
+  <div class="apps-inner">
+    <div class="section-header reveal">
+      <p class="section-label">// 09 — Applications</p>
+      <h2 class="section-title">WHERE DUAL<br>WORLD LIVES</h2>
+    </div>
+    <div class="apps-grid">
+      <div class="app-card reveal">
+        <div class="app-num">01</div>
+        <h3>Gaming & Entertainment Platforms</h3>
+        <p>The dual-world concept transforms gaming sites into immersive experiences. Players can toggle between normal lobbies and dark, atmospheric versions. Entertainment platforms use this for movie promotions, creating alternate reality previews that pull viewers deeper into storylines.</p>
+      </div>
+      <div class="app-card reveal" style="transition-delay:0.2s">
+        <div class="app-num">02</div>
+        <h3>Immersive Storytelling & Brand Experiences</h3>
+        <p>Brands leverage the "Enter Upside Down" feature for interactive campaigns. Storytelling platforms offer readers two narrative perspectives. This technology creates memorable, shareable moments that defy conventional web experiences.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section id="cta">
+  <p class="cta-label reveal">// Are you ready?</p>
+  <h2 class="cta-title reveal glitch-target" data-text="READY TO DEFY DIMENSIONS?">
+    READY TO<br>
+    <span class="accent-block">DEFY</span>
+    DIMENSIONS?
+  </h2>
+  <p class="cta-sub reveal">Two Worlds. One Click.</p>
+  <div class="cta-buttons reveal">
+    <button id="cta-toggle" class="btn-primary" onclick="toggleWorld()">ENTER THE UPSIDE DOWN</button>
+    <button class="btn-outline" onclick="scrollToTop()">↑ BACK TO TOP</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">DUAL WORLD</div>
+  <p class="footer-text">Two Worlds. One Click. © 2025</p>
+  <p class="footer-credit">By Code Warriors</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
