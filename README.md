@@ -129,7 +129,7 @@ This project is open-source and available under the **MIT License**.
 
 **Akshat Gupta**
 
-* 💼 Aspiring Full Stack Developer
+* 💼 Full Stack Developer
 * 🚀 Passionate about UI/UX & creative web experiences
 
 ---
